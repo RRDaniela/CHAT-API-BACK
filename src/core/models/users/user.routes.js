@@ -29,7 +29,7 @@ router.post('/users/register', (req, res) => {
             usersController.create(req.body.name, req.body.email, req.body.password, req.body.role, req.body.group)
             res.status(200).send("User added");
         }else{
-            res.send("Email already exists")
+            res.status(400).send("Email already exists")
         }
     });    
 });
